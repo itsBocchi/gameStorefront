@@ -1,0 +1,22 @@
+.navbar{
+    background-color: #272830;
+    display: flex;
+    align-self: baseline;
+    padding:10px 0px;
+    justify-content: baseline;
+    gap: 10px;
+    a{
+        color:white;
+        font-weight: 500;
+        font-size: 20px;
+        margin-right: 10px;
+    }
+    span{
+        color: white;
+    }
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  
