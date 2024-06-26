@@ -1,27 +1,23 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { NgModule } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { GameService } from '../../services/game.service';
+import { Game } from '../../models/game.model';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, RouterModule],
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.scss'
 })
 
-export class InicioComponent {
+export class InicioComponent implements OnInit{
+  games: Game[] = [];
 
-  // Esto aún no sirve
-  
-  /*juegos = [
-    {id: 1, nombre: 'Elden Ring',imagenUrl: 'elden_ring.jpeg'}
-  ];
+  constructor(private gameService: GameService) {}
 
-  constructor(private router: Router){}
-  
-  verDetalle(id: number) {
-    this.router.navigate(['/detalle-juego', id]);
-  } */
-  
+  ngOnInit(): void {
+    this.games = this.gameService.getGames();
+  }
 }

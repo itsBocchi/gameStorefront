@@ -1,1 +1,6 @@
 <p>INICIO works!</p>
+<ul>
+    <li *ngFor="let game of games">
+      <a [routerLink]="['/juego', game.id]">{{ game.name }}</a>
+    </li>
+  </ul>

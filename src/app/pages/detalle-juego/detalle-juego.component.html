@@ -1,1 +1,10 @@
 <p>detalle-juego works!</p>
+
+<h2>Detalles del Juego</h2>
+<div *ngIf="game">
+  <p>ID del Juego: {{ game.id }}</p>
+  <p>Nombre del Juego: {{ game.name }}</p>
+</div>
+<div *ngIf="!game">
+  <p>Juego no encontrado.</p>
+</div>
