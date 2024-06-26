@@ -1,4 +1,18 @@
-<mat-toolbar class="navbar" color="primary">
-    <a  mat-button routerLink="/">Inicio</a>
-    <a mat-button routerLink="/lista"> Lista </a>
-  </mat-toolbar>
+<mat-toolbar class="navbar">
+  <div class="nav-links">
+    <a button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">INICIO</a>
+    <a button routerLink="/lista" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">LISTA</a>
+  </div>
+  <div class="search-container">
+    <div class="search-input">
+      <input matInput type="text" placeholder="Buscar" [(ngModel)]="searchGame">
+      <button mat-icon-button>
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-toolbar>
+
+
+
+

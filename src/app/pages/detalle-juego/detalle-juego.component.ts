@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+import { NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-detalle-juego',
@@ -8,5 +10,5 @@ import { Component } from '@angular/core';
   styleUrl: './detalle-juego.component.scss'
 })
 export class DetalleJuegoComponent {
-
+  
 }

@@ -4,16 +4,20 @@ import { MatToolbar } from '@angular/material/toolbar';
 import { MatIcon } from '@angular/material/icon';
 import { MatButton, MatButtonModule, MatIconButton } from '@angular/material/button';
 import { MatMenuItem, MatMenuModule } from '@angular/material/menu';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
   imports: [RouterLink, RouterLinkActive, MatToolbar, MatIcon, MatButton,
     MatIconButton, MatButtonModule,
-    MatMenuModule, MatMenuItem],
+    MatMenuModule, MatMenuItem, FormsModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+  searchGame: string = '';
 
+  constructor() {}
 }
