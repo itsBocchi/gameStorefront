@@ -1,7 +1,10 @@
 <div class="carousel-container">
     <button (click)="previousSet()">Previous</button>
     <div class="images-display">
-      <img *ngFor="let image of images.slice(currentIndex, currentIndex + displayCount)" [src]="image">
+      <div *ngFor="let item of images.slice(currentIndex, currentIndex + displayCount)">
+        <img [src]="item.url">
+        <p>{{ item.text }}</p> <!-- Display the text below the image -->
+      </div>
     </div>
     <button (click)="nextSet()">Next</button>
   </div>
