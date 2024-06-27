@@ -1,0 +1,19 @@
+.carousel-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .images-display {
+    display: flex;
+    overflow: hidden;
+    div {
+      text-align: center; // Center the text below the image
+      margin-right: 5px; // Adjust based on your needs
+      img {
+        width: 100%; // Adjust based on your needs
+      }
+      p {
+        margin-top: 5px; // Space between the image and the text
+      }
+    }
+  }

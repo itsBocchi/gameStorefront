@@ -1,0 +1,7 @@
+<div class="carousel-container">
+    <button (click)="previousSet()">Previous</button>
+    <div class="images-display">
+      <img *ngFor="let image of images.slice(currentIndex, currentIndex + displayCount)" [src]="image">
+    </div>
+    <button (click)="nextSet()">Next</button>
+  </div>
