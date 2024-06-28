@@ -1,6 +1,8 @@
-<p>INICIO works!</p>
-<ul>
-    <li *ngFor="let game of games">
-      <a [routerLink]="['/juego', game.id]">{{ game.name }}</a>
-    </li>
-  </ul>
+
+<div class="inicio-background">
+  <div class="image-container">
+    <img src="assets/images/elden_ring.jpeg" alt="Elden Ring" class="inicio-image">
+  </div>
+</div>
+
+<app-carousel></app-carousel>
