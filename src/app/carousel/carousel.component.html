@@ -4,7 +4,7 @@
       <mat-icon [inline]="true" class="carousel-icon">navigate_before</mat-icon>
     </button>
   <div class="card-container">
-    <div *ngFor="let game of getCurrentSet(); trackBy: trackById">
+    <div *ngFor="let game of getCurrentSet(); trackBy: trackById" (click)="navigateToGameDetails(game.id)">
       <div class="card">
         <div class="card-img-container">
           <img [src]="'assets/caratule_img/' + game.image" class="card-img-top" alt="Game Image">

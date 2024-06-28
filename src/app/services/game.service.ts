@@ -13,7 +13,10 @@ export class GameService {
     {id: 5, name: 'THE WITCHER 3: WILD HUNT', image: 'tw3.jpg'},
     {id: 6, name: 'DOOM', image: 'doom.jpg'},
     {id: 7, name: 'HALO: MASTER CHIEF COLLECTION', image: 'halo.jpg'},
-    {id: 8, name: 'DEATH STRANDING', image: 'deathstranding.jpg'}
+    {id: 8, name: 'DEATH STRANDING', image: 'deathstranding.jpg'},
+    {id: 9, name: 'GRAND THEFT AUTO 5', image: 'gta5.jpg'},
+    {id: 10, name: 'HOLLOW KNIGHT', image: 'hollowknight.jpg'},
+    {id: 11, name: 'BIOSHOCK INFINITE', image: 'bioshock_inf.jpg'}
   ];
 
   constructor() { }
@@ -25,4 +28,5 @@ export class GameService {
   getGame(id: number): Game | undefined {
     return this.games.find(game => game.id === id);
   }
+  
 }

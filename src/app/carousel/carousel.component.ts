@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Game } from '../models/game.model';
 import { GameService } from '../services/game.service';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 
 @Component({
@@ -18,13 +18,18 @@ export class CarouselComponent {
   currentIndex = 0;
   displayCount = 5;
 
-  constructor(private gameService: GameService) {}
+  constructor(
+    private gameService: GameService,
+    private router: Router
+  ) {}
+  
   ngOnInit(): void {
     this.games = this.gameService.getGames();
   }
   trackById(index: number, game: Game): number {
     return game.id;
   }
+  
   
   nextSet(): void {
     this.currentIndex += 1;
@@ -53,5 +58,7 @@ export class CarouselComponent {
     return set;
   }
   
-  
+  navigateToGameDetails(id: number): void {
+    this.router.navigate(['/juego', id]);
+  }
 }
