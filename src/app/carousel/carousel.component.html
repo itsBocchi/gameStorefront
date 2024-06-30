@@ -7,7 +7,7 @@
     <div *ngFor="let game of getCurrentSet(); trackBy: trackById" (click)="navigateToGameDetails(game.id)">
       <div class="card">
         <div class="card-img-container">
-          <img [src]="'assets/caratule_img/' + game.image" class="card-img-top" alt="Game Image">
+          <img [src]="'assets/cover_img/' + game.cover_img" class="card-img-top" alt="Game Image">
         </div>
         <div class="card-body">
           <a [routerLink]="['/juego', game.id]" class="btn">{{ game.name }}</a>

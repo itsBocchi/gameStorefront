@@ -1,9 +1,8 @@
-<p>detalle-juego works!</p>
-
-<h2>Detalles del Juego</h2>
-<div *ngIf="game">
-  <p>ID del Juego: {{ game.id }}</p>
-  <p>Nombre del Juego: {{ game.name }}</p>
+<div *ngIf="game" [ngStyle]="{'background-image': 'url(assets/details_img/' + game.details_img + ')'}" class="background">
+  <div class="details_container">
+  <p><strong>{{ game.name }}</strong></p>
+  <p>{{ game.description }}</p>
+  </div>
 </div>
 <div *ngIf="!game">
   <p>Juego no encontrado.</p>
