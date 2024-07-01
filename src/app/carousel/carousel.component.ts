@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit} from '@angular/core';
 import { Game } from '../models/game.model';
 import { GameService } from '../services/game.service';
 import { RouterLink, Router } from '@angular/router';
@@ -14,7 +14,6 @@ import { MatIcon } from '@angular/material/icon';
 })
 export class CarouselComponent {
   games: Game[] = [];
-
   currentIndex = 0;
   displayCount = 5;
 
@@ -25,17 +24,35 @@ export class CarouselComponent {
   
   ngOnInit(): void {
     this.games = this.gameService.getGames();
+    this.updateDisplayCount();
   }
   trackById(index: number, game: Game): number {
     return game.id;
   }
   
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.updateDisplayCount();
+  }
   
   nextSet(): void {
     this.currentIndex += 1;
     if (this.currentIndex >= this.games.length) {
       this.currentIndex = 0;
     }
+  }
+
+  updateDisplayCount(): void {
+    if (typeof window !== 'undefined') {
+      const width = window.innerWidth;
+      if (width < 768) {
+        this.displayCount = 2; // small
+      } else if (width >= 768 && width < 1024) {
+        this.displayCount = 3; // medium
+      } else {
+        this.displayCount = 3; // large
+      }
+    } 
   }
   
   previousSet(): void {
@@ -61,4 +78,5 @@ export class CarouselComponent {
   navigateToGameDetails(id: number): void {
     this.router.navigate(['/juego', id]);
   }
+  
 }
