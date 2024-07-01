@@ -1,4 +1,9 @@
 <mat-toolbar class="navbar">
+  <div *ngIf="isGameDetailPage" >
+    <button mat-icon-button (click)="goBack()">
+      <mat-icon class="back-icon">arrow_back</mat-icon>
+    </button>
+  </div>
   <div class="nav-links">
     <a button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">INICIO</a>
     <a button routerLink="/lista" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">LISTA</a>
@@ -12,6 +17,7 @@
     </div>
   </div>
 </mat-toolbar>
+
 
 
 

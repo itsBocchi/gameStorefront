@@ -1,6 +1,6 @@
 .carousel-container {
   display: flex;
-  align-items: center;
+  align-items: column;
   justify-content: center;
 }
 
@@ -85,7 +85,6 @@
   background: none;
   border: none;
   cursor: pointer;
-  
 }
 
 .carousel-icon {
