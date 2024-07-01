@@ -1,5 +1,13 @@
-# GameStorefront
+# Game Store Front
+Proyecto del ramo "Desarrollo Front-end" Semestre 2024-1.
 
+## Información relevante
+- Para que el proyecto funcione primero descargar las librerías con "npm install" luego hacer "ng serve" para ver la página.
+- El diseño de la página se encuentra en la carpeta "design" en el PDF "web_design.pdf".
+
+
+
+# Angular Information
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.5.
 
 ## Development server
