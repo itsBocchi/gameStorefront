@@ -45,15 +45,17 @@ export class CarouselComponent {
   updateDisplayCount(): void {
     if (typeof window !== 'undefined') {
       const width = window.innerWidth;
-      if (width < 768) {
-        this.displayCount = 2; // small
-      } else if (width >= 768 && width < 1024) {
-        this.displayCount = 3; // medium
+      if (width < 816) {
+        this.displayCount = 1;
+      } else if (width >= 816 && width < 1146) {
+        this.displayCount = 2;
+      } else if (width >= 1146 && width < 1476) {
+        this.displayCount = 3;
       } else {
-        this.displayCount = 3; // large
-      }
-    } 
-  }
+        this.displayCount = 4;
+      }
+    }
+  }
   
   previousSet(): void {
     this.currentIndex -= 1;
