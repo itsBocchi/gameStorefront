@@ -51,8 +51,10 @@ export class CarouselComponent {
         this.displayCount = 2;
       } else if (width >= 1146 && width < 1476) {
         this.displayCount = 3;
-      } else {
+      } else if (width >= 1476 && width < 1806) {
         this.displayCount = 4;
+      } else {
+        this.displayCount = 5;
       }
     }
   }
