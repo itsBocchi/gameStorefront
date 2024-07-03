@@ -51,9 +51,21 @@ export class CarouselComponent {
         this.displayCount = 2;
       } else if (width >= 1146 && width < 1476) {
         this.displayCount = 3;
-      } else {
+      } else if (width >= 1476 && width < 1806) {
         this.displayCount = 4;
-      }
+      } else if (width >= 1806 && width < 2136){
+        this.displayCount = 5;
+      } else if (width >= 2136 && width < 2466){
+        this.displayCount = 6;
+      } else if (width >= 2466 && width < 2796){
+        this.displayCount = 7;
+      } else if (width >= 2796 && width < 3126){
+        this.displayCount = 8;
+      } else if (width >= 3126 && width < 3456){
+        this.displayCount = 9;
+      } else {
+        this.displayCount = 10;
+      }
     }
   }
   
