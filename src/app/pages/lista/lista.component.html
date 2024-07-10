@@ -1,4 +1,10 @@
 <div class="list-container">
+  <div class="button-row">
+    <a mat-fab extended [routerLink]="['/create_game']">
+      Agregar Juego
+      <mat-icon>add_box</mat-icon>  
+    </a>
+  </div>
   <div class="row" *ngFor="let row of gamesInRows">
     <div class="card" *ngFor="let game of row" (click)="navigateToGameDetails(game.id)">
       <div class="card-img-container">

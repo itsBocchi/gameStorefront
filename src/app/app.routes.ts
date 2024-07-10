@@ -2,6 +2,7 @@ import { Routes,  RouterModule  } from '@angular/router';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { ListaComponent } from './pages/lista/lista.component';
 import { DetalleJuegoComponent } from './pages/detalle-juego/detalle-juego.component';
+import { CreateGameComponent } from './pages/create-game/create-game.component';
 
 
 export const routes: Routes = [
@@ -14,5 +15,8 @@ export const routes: Routes = [
 },{
     path:'juego/:id',
     component: DetalleJuegoComponent
-},
+},{
+    path: 'create_game',
+    component: CreateGameComponent
+},  
 ];

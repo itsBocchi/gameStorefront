@@ -62,3 +62,16 @@
     color: #90909000;
   }
   
+  //Button Row Here
+.button-row{
+  display:flex;
+  padding-top:20px;
+  padding-bottom:0;
+  padding-right:30px;
+  margin:0;
+  align-self: flex-end;
+  a{
+    background-color:#272830;
+    color:white;
+  }
+}

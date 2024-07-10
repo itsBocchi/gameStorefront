@@ -28,6 +28,18 @@ export class GameService {
   getGame(id: number): Game | undefined {
     return this.games.find(game => game.id === id);
   }
-
   
+  // Agregar juegos a Game []
+  addGames(name: string, description: string): Game[] {
+    const newId = this.games.length + 1;
+    const newGame: Game = {
+      id: newId,
+      name: name,
+      cover_img: 'placeholder.jpg',
+      details_img: 'placeholder.jpg',
+      description: description,
+    };
+    this.games.push(newGame);
+    return this.games;
+  }
 }

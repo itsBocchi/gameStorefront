@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../../services/game.service'; 
 import { Game } from '../../models/game.model';
-import { RouterModule, Router } from '@angular/router';
+import { RouterModule, Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { MatButton, MatFabAnchor, MatFabButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-lista',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, MatButton, MatIcon,MatFabButton, RouterLink, MatFabAnchor],
   templateUrl: './lista.component.html',
   styleUrl: './lista.component.scss'
 })
