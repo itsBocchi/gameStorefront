@@ -59,9 +59,8 @@ export class GameService {
           if (game.id == updatedGame.id) {
             console.log(`Updating game with id ${game.id}`);
             console.log(`Updated game: ${JSON.stringify(updatedGame)}`);
-            // fill the rest of the values with placeholders
-            updatedGame.cover_img = 'placeholder.jpg';
-            updatedGame.details_img = 'placeholder.jpg';
+            updatedGame.cover_img = game.cover_img;
+            updatedGame.details_img = game.details_img;
             updatedGame.id = game.id;
             return updatedGame;
           }
