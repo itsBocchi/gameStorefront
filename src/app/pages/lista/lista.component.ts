@@ -29,6 +29,10 @@ export class ListaComponent implements OnInit {
   trackById(game: Game): number {
     return game.id;
   }
+  loadGames(): void {
+    this.games = this.gameService.getGames();
+    this.hacerFilas();
+  }
 
   navigateToGameDetails(id: number): void {
     this.router.navigate(['/juego', id]);
@@ -47,7 +51,7 @@ export class ListaComponent implements OnInit {
     const confirmDelete = window.confirm('¿Estás seguro de que quieres eliminar este juego?');
     if (confirmDelete) {
       this.gameService.deleteGame(id);
-      this.games = this.gameService.getGames(); // Actualizar la lista de juegos después de eliminar
+      this.loadGames(); 
     }
   }
 }

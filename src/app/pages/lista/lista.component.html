@@ -12,7 +12,7 @@
       </div>
       <div class="card-body">
         <a [routerLink]="['/juego', game.id]" class="btn">{{ game.name }}</a>
-        <button mat-icon-button class="delete-button" (click)="deleteGame( game.id)">
+        <button mat-icon-button class="delete-button" (click)="deleteGame(game.id)">
           <mat-icon>delete</mat-icon>
         </button>
         <button mat-icon-button class="edit-button" (click)="navigateToGameDetails(game.id)">
