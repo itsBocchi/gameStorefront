@@ -27,5 +27,10 @@ export class DetalleJuegoComponent implements OnInit{
     } else {
       this.game = undefined;
     }
+    this.printGame();
+  }
+  printGame(): void {
+    console.log(this.game);
+    console.log(this.game?.name);
   }
 }

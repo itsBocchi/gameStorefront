@@ -53,14 +53,18 @@ export class GameService {
   updateGame(updatedGame: Game): Promise<void> {
     return new Promise<void>((resolve, reject) => {
       try {
+        console.log('Before update:', JSON.stringify(this.games));
         this.games = this.games.map(game => {
           if (game.id === updatedGame.id) {
+            console.log(`Updating game with id ${game.id}`);
             return updatedGame;
           }
           return game;
         });
+        console.log('After update:', JSON.stringify(this.games));
         resolve();
       } catch (error) {
+        console.error('Update failed:', error);
         reject(error);
       }
     });
