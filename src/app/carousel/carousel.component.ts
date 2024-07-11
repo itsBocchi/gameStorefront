@@ -95,6 +95,10 @@ export class CarouselComponent {
     this.router.navigate(['/juego', id]);
   }
 
+  navigateToUpdateGame(id: number): void {
+    this.router.navigate(['/update_game', id]);
+  }
+
   deleteGame(id: number): void {
     const confirmDelete = window.confirm('¿Estás seguro de que quieres eliminar este juego?');
     if (confirmDelete) {

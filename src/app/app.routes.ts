@@ -3,6 +3,7 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { ListaComponent } from './pages/lista/lista.component';
 import { DetalleJuegoComponent } from './pages/detalle-juego/detalle-juego.component';
 import { CreateGameComponent } from './pages/create-game/create-game.component';
+import { UpdateGameComponent } from './pages/update-game/update-game.component';
 
 
 export const routes: Routes = [
@@ -18,5 +19,7 @@ export const routes: Routes = [
 },{
     path: 'create_game',
     component: CreateGameComponent
-},  
+},{path: 'update_game/:id',
+    component: UpdateGameComponent
+},
 ];

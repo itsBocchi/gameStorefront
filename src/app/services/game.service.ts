@@ -48,4 +48,21 @@ export class GameService {
     this.games = this.games.filter(game => game.id !== id);
     return this.games;
   }
+
+  // Método para actualizar juegos
+  updateGame(updatedGame: Game): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+      try {
+        this.games = this.games.map(game => {
+          if (game.id === updatedGame.id) {
+            return updatedGame;
+          }
+          return game;
+        });
+        resolve();
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
 }

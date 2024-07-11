@@ -1,0 +1,67 @@
+<!-- src/app/pages/update-game/update-game.component.html -->
+<!-- <form [formGroup]="form" (ngSubmit)="save()">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" type="submit">Update Game</button>
+  </form> -->
+
+<div class="container-form">
+  <h2>{{title}}</h2>
+  <!-- Aquí va la Form -->
+  <form [formGroup]="form">
+    <div class="row">
+      <!-- Apartado para el nombre del juego -->
+      <div class="col-md-12">
+        <mat-form-field class="form-field full-width" appearance="outline">
+          <mat-label> Nombre del juego
+          </mat-label>
+          <input matInput formControlName="name">
+          <mat-error *ngIf="form.get('name')!.touched && form.get('name')!.invalid">
+            <span *ngIf="form.get('name')!.errors! &&
+              form.get('name')!.errors!['required']
+            ">Escribe el nombre.
+            </span>
+            <span *ngIf="form.get('name')!.errors! &&
+              form.get('name')!.errors!['maxlength']
+            ">No puede superar 
+            {{form.get('name')!.errors!['maxlength']['requiredLength']}}
+            </span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <!-- Apartado para el nombre del juego -->
+      <div class="col-md-12">
+          <mat-form-field class="form-field" appearance="outline">
+              <mat-label> Descripción del juego
+              </mat-label>
+              <textarea matInput formControlName="description"></textarea>
+              <mat-error *ngIf="form.get('description')!.touched && form.get('description')!.invalid">
+                <span *ngIf="form.get('description')!.errors! &&
+                  form.get('description')!.errors!['required']
+                ">Escribe la descripción.
+                </span>
+                <span *ngIf="form.get('description')!.errors! &&
+                  form.get('description')!.errors!['maxlength']
+                ">No puede superar requiredLength
+                {{form.get('description')!.errors!['maxlength']['requiredLength']}}
+                </span>
+              </mat-error>
+            </mat-form-field>
+          </div>
+    </div>
+  </form>
+  <!-- Botón que al presionarse invoca la función para guardar el juego -->
+  <button mat-raised-button color ="primary"(click)="save()">
+    <mat-icon>add</mat-icon>
+    Guardar
+  </button>
+</div>
+  

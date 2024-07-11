@@ -38,6 +38,10 @@ export class ListaComponent implements OnInit {
     this.router.navigate(['/juego', id]);
   }
 
+  navigateToUpdateGame(id: number): void {
+    this.router.navigate(['/update_game', id]);
+  }
+
   private hacerFilas(): void {
     const itemsPerRow = 5;
     this.gamesInRows = [];
