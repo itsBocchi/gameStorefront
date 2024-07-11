@@ -55,9 +55,13 @@ export class GameService {
       try {
         console.log('Before update:', JSON.stringify(this.games));
         this.games = this.games.map(game => {
-          if (game.id === updatedGame.id) {
+          console.log(`id ${game.id} === idupdate ${updatedGame.id}`);
+          if (game.id == updatedGame.id) {
             console.log(`Updating game with id ${game.id}`);
             console.log(`Updated game: ${JSON.stringify(updatedGame)}`);
+            // fill the rest of the values with placeholders
+            updatedGame.cover_img = 'placeholder.jpg';
+            updatedGame.details_img = 'placeholder.jpg';
             return updatedGame;
           }
           return game;
