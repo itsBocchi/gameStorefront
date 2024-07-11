@@ -62,6 +62,7 @@ export class GameService {
             // fill the rest of the values with placeholders
             updatedGame.cover_img = 'placeholder.jpg';
             updatedGame.details_img = 'placeholder.jpg';
+            updatedGame.id = game.id;
             return updatedGame;
           }
           return game;
