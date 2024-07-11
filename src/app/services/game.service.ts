@@ -28,6 +28,50 @@ export class GameService {
   getGame(id: number): Game | undefined {
     return this.games.find(game => game.id === id);
   }
-
   
+  // Agregar juegos a Game []
+  addGames(name: string, description: string): Game[] {
+    const newId = this.games.length + 1;
+    const newGame: Game = {
+      id: newId,
+      name: name,
+      cover_img: 'placeholder.jpg',
+      details_img: 'placeholder.jpg',
+      description: description,
+    };
+    this.games.push(newGame);
+    return this.games;
+  }
+
+  // Método para eliminar juegos
+  deleteGame(id: number): Game[] {
+    this.games = this.games.filter(game => game.id !== id);
+    return this.games;
+  }
+
+  // Método para actualizar juegos
+  updateGame(updatedGame: Game): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+      try {
+        console.log('Before update:', JSON.stringify(this.games));
+        this.games = this.games.map(game => {
+          console.log(`id ${game.id} === idupdate ${updatedGame.id}`);
+          if (game.id == updatedGame.id) {
+            console.log(`Updating game with id ${game.id}`);
+            console.log(`Updated game: ${JSON.stringify(updatedGame)}`);
+            updatedGame.cover_img = game.cover_img;
+            updatedGame.details_img = game.details_img;
+            updatedGame.id = game.id;
+            return updatedGame;
+          }
+          return game;
+        });
+        console.log('After update:', JSON.stringify(this.games));
+        resolve();
+      } catch (error) {
+        console.error('Update failed:', error);
+        reject(error);
+      }
+    });
+  }
 }

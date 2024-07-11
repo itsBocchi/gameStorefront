@@ -1,16 +1,22 @@
-<div class="carousel-container">
+
   <div class="carousel-container">
     <button mat-icon-button (click)="previousSet()" class="carousel-button-left">
       <mat-icon [inline]="true" class="carousel-icon">navigate_before</mat-icon>
     </button>
   <div class="card-container">
-    <div *ngFor="let game of getCurrentSet(); trackBy: trackById" (click)="navigateToGameDetails(game.id)">
+    <div *ngFor="let game of getCurrentSet(); trackBy: trackById">
       <div class="card">
-        <div class="card-img-container">
+        <div class="card-img-container" (click)="navigateToGameDetails(game.id)">
           <img [src]="'assets/cover_img/' + game.cover_img" class="card-img-top" alt="Game Image">
         </div>
         <div class="card-body">
           <a [routerLink]="['/juego', game.id]" class="btn">{{ game.name }}</a>
+          <button mat-icon-button class="delete-button" (click)="deleteGame(game.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button mat-icon-button class="edit-button" (click)="navigateToUpdateGame(game.id)">
+            <mat-icon>edit</mat-icon>
+          </button>
         </div>
       </div>
     </div>
@@ -18,6 +24,5 @@
   <button mat-icon-button (click)="nextSet()" class="carousel-button-right">
     <mat-icon [inline]="true" class="carousel-icon">navigate_next</mat-icon>
   </button>
-</div>
 
 

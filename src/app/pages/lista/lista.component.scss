@@ -52,13 +52,27 @@
   }
   
   .card-body a {
-    font-size: 1.2rem;
-    color: white;
-    text-decoration: none;
+    font-size: 1.2rem; 
+    color: rgb(212, 212, 212); 
+    text-decoration: none; 
     margin-top: 10px;
   }
   
   .card-body a:hover {
-    color: #90909000;
+    color: #ffffff; 
   }
   
+  //Button Row Here
+.button-row{
+  display:flex;
+  padding-top:20px;
+  padding-bottom:0;
+  padding-right:30px;
+  margin:0;
+  align-self: flex-end;
+  a{
+    background-color:#272830;
+    color:white;
+  }
+}
+

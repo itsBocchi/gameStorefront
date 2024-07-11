@@ -4,6 +4,7 @@ import { Game } from '../models/game.model';
 import { GameService } from '../services/game.service';
 import { RouterLink, Router } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-carousel',
@@ -19,7 +20,8 @@ export class CarouselComponent {
 
   constructor(
     private gameService: GameService,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) {}
   
   ngOnInit(): void {
@@ -92,5 +94,16 @@ export class CarouselComponent {
   navigateToGameDetails(id: number): void {
     this.router.navigate(['/juego', id]);
   }
-  
+
+  navigateToUpdateGame(id: number): void {
+    this.router.navigate(['/update_game', id]);
+  }
+
+  deleteGame(id: number): void {
+    const confirmDelete = window.confirm('¿Estás seguro de que quieres eliminar este juego?');
+    if (confirmDelete) {
+      this.gameService.deleteGame(id);
+      this.games = this.gameService.getGames(); // Actualizar la lista de juegos después de eliminar
+    }
+  }
 }

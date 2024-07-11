@@ -9,3 +9,157 @@ body {
     background: linear-gradient(to bottom, #41424F, #22232E);
   
 }
+
+.delete-button {
+  background-color: transparent; /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  padding: 5px 5px; /* Espaciado interior */
+  border-radius: 4px; /* Borde redondeado */
+  cursor: pointer; /* Cursor de puntero */
+  transition: background-color 0.3s;
+  margin-left: auto;
+}
+
+.delete-button:hover {
+  background-color: #d03e3e; 
+  
+}
+
+.edit-button {
+  background-color: transparent; /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  padding: 5px 5px; /* Espaciado interior */
+  border-radius: 4px; /* Borde redondeado */
+  cursor: pointer; /* Cursor de puntero */
+  transition: background-color 0.3s;
+  margin-left: auto;
+}
+
+.edit-button:hover {
+  background-color: #4949ec; 
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+}
+
+/* Estilos para la tarjeta */
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-grow: 1;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.card {
+  margin: 0 10px;
+  border-radius: 10px;
+  flex: 0 1 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 230px;
+  height: 344px;
+  margin-inline: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .card-body {
+    color: #666;
+    transition: color 0.3s ease;
+  }
+
+  &:hover .card-body {
+    color: #333;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 180px; 
+    margin: 0 5px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 150px;
+    margin: 0 2px;
+  }
+}
+
+.card-img-top {
+  max-width: 100%; /* Asegura que la imagen no sea más ancha que la tarjeta */
+  max-height: 100%; /* Asegura que la imagen no sea más alta que la tarjeta */
+  object-fit: contain; /* Escala la imagen para que quepa dentro de la tarjeta sin distorsión */
+  border-radius: 10px;
+}
+
+.card-text {
+  color: #666;
+}
+
+.card-body a {
+  font-size: 1.2rem; 
+  color: rgb(212, 212, 212); 
+  text-decoration: none; 
+  margin-top: 10px;
+}
+
+.card-body a:hover {
+  color: #ffffff; 
+}
+
+.card-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.card-img-top {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.carousel-button-left {
+  background: none;
+  border: none;
+  cursor: pointer;
+  align-items: left;
+}
+
+.carousel-button-right {
+  background: none;
+  border: none;
+  cursor: pointer;
+  align-items: right;
+}
+
+.carousel-icon {
+  font-size: 70px; 
+  color: white;
+  margin-top: 75px;
+}

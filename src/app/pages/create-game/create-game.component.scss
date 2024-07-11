@@ -1,0 +1,74 @@
+// Estilos para el form.
+
+.container-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #272830;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color:white;
+  
+    h2 {
+      color: white;
+      font-size: 24px;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    input {
+        color:white;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      color:white;
+    
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -0.5rem;
+  
+        .col-md-12 {
+          flex: 0 0 100%;
+          padding: 0.5rem;
+        }
+      }
+  
+      .form-field {
+        width: 100%;
+        margin-bottom: 1rem;
+  
+        &.full-width {
+          width: 100%;
+        }
+  
+        textarea {
+          min-height: 100px;
+          color:white;
+        }
+      }
+    }
+  
+    button {
+      align-self: flex-end;
+      background-color: #1976d2;
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #1565c0;
+      }
+  
+      &:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+      }
+    }
+  }
