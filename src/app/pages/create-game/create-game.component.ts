@@ -34,7 +34,7 @@ export class CreateGameComponent {
     private snackBar: MatSnackBar,
     private router: Router,
   ){
-    // Constuir form con sus validators.
+    // Construir form con sus validators.
     this.form = this.formBuilder.group({
       name:['', [Validators.required, Validators.maxLength(50)]],
       description:['', [Validators.required, Validators.maxLength(2000)]],

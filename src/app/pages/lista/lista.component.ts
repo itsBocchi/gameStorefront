@@ -5,6 +5,7 @@ import { RouterModule, Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatButton, MatFabAnchor, MatFabButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-lista',
@@ -18,7 +19,7 @@ export class ListaComponent implements OnInit {
   gamesInRows: Game[][] = [];
 
   constructor(private router: Router, 
-      private gameService: GameService) { }
+      private gameService: GameService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.games = this.gameService.getGames();
@@ -39,6 +40,14 @@ export class ListaComponent implements OnInit {
 
     for (let i = 0; i < this.games.length; i += itemsPerRow) {
       this.gamesInRows.push(this.games.slice(i, i + itemsPerRow));
+    }
+  }
+
+  deleteGame(id: number): void {
+    const confirmDelete = window.confirm('¿Estás seguro de que quieres eliminar este juego?');
+    if (confirmDelete) {
+      this.gameService.deleteGame(id);
+      this.games = this.gameService.getGames(); // Actualizar la lista de juegos después de eliminar
     }
   }
 }

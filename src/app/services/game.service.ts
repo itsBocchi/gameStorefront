@@ -42,4 +42,10 @@ export class GameService {
     this.games.push(newGame);
     return this.games;
   }
+
+  // Método para eliminar juegos
+  deleteGame(id: number): Game[] {
+    this.games = this.games.filter(game => game.id !== id);
+    return this.games;
+  }
 }
