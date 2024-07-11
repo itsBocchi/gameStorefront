@@ -57,6 +57,7 @@ export class GameService {
         this.games = this.games.map(game => {
           if (game.id === updatedGame.id) {
             console.log(`Updating game with id ${game.id}`);
+            console.log(`Updated game: ${JSON.stringify(updatedGame)}`);
             return updatedGame;
           }
           return game;
